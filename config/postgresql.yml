@@ -1,0 +1,24 @@
+Default: &defaults
+  user: circuit
+  password: circuit
+  host: localhost
+  port: 5432
+  database: circuit
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: circuit_test
+  <<: *defaults
+
+Staging:
+  database: circuit_staging
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: circuit_production
+  poolsize: 100
+  <<: *defaults
